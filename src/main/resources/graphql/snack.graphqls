@@ -1,0 +1,25 @@
+type Query {
+    getSnackById(id: ID!): Snack
+    snacks: [Snack]
+}
+
+type Snack {
+    id: ID!
+    name: String!
+    amount: Float!
+    reviews: [Review]!
+}
+
+input SnackInput {
+    name: String!,
+    amount: Float!
+}
+
+type Mutation {
+#    newSnack(snack: SnackInput!) : Snack!
+    newSnack(name: String!, amount: Float!) : Snack!
+    deleteSnack(id: ID!) : Boolean!
+    updateSnack(id: ID!, amount: Float!) : Snack!
+}
+
+
